@@ -1,4 +1,4 @@
-﻿/*int trig = 2;
+int trig = 2;
 int echo = 3;
 long lecture_echo;
 long cm;
@@ -24,4 +24,3 @@ Serial.print("Distance en cm :");
 Serial.println(cm);
 delay(500);
 }
-/*
