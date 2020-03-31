@@ -20,7 +20,7 @@ public class SerialPortTest : MonoBehaviour
     void Update()
     {
         updatePeriod += Time.deltaTime;
-        if (updatePeriod > 0.2f)
+        if (updatePeriod > 1f)
         {
             //StartCoroutine(ReadInfo);
             message2 = sp.ReadByte();

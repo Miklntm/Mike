@@ -31,7 +31,7 @@ public class cubeMovement : MonoBehaviour
         if (sp.IsOpen)
         {
             distInt = sp.ReadByte();
-            distance = (float)distInt / 100;
+            distance = (float)distInt / 500;
             dist2Move = previousPos - distance;
             if (dist2Move < 0)
             {
