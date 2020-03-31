@@ -21,7 +21,7 @@ digitalWrite(trig, LOW);
 pinMode(echo, INPUT);
 SLIPSerial.begin(9600);
 
-Serial.println ("Bienvenue sur les tutoriels d'IHM 3D");
+//Serial.println ("Bienvenue sur les tutoriels d'IHM 3D");
 }
 
 void loop(){
@@ -31,12 +31,13 @@ delayMicroseconds(10);
 digitalWrite(trig, LOW);
 lecture_echo = pulseIn(echo,HIGH);
 cm = lecture_echo /58;
-Serial.print("Distance en cm :");
-Serial.println(cm);
+//Serial.print("Distance en cm :");
+//Serial.println(cm);
 delay(500);
+sendMessage("/distance", cm);
 }
 
-void sendMessage(char * addr, int value) {
+void sendMessage(char * addr, long value) {
   OSCMessage msg(addr);
   msg.add(value);
 
@@ -47,6 +48,5 @@ void sendMessage(char * addr, int value) {
   
   
 }
-  
   
   
