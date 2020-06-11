@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class mer_separation : MonoBehaviour
 {
+    public bool testManuelDuTrigger;
+    
+    
     /*
      * C'est important de savoir si on est en train de se déplacer
      * pour éviter d'initier plusieurs fois en même temps un déplacement.
@@ -32,7 +35,10 @@ public class mer_separation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        // ça c'est juste pour pouvoir tester
+        if (testManuelDuTrigger && !isMoving) {
+            StartCoroutine(Move(slideDist, slideVelocity));
+        }
     }
 
     void OnTriggerEnter(Collider col)
@@ -63,12 +69,15 @@ public class mer_separation : MonoBehaviour
          */
         while (movedDistance < dist)
         {
+            
 
             // le déplacement à exécuter sur cette frame-ci
             float moveX = velocity * Time.deltaTime;
+            
+            Debug.Log(movedDistance);
 
             // on ajoute ce déplacement à la position en x
-            transform.position = new Vector3(
+            transform.localPosition = new Vector3(
                 transform.localPosition.x + moveX,
                 transform.localPosition.y,
                 transform.localPosition.z);
@@ -86,13 +95,11 @@ public class mer_separation : MonoBehaviour
 
         /*
          * Normalement quand on arrive à cet endroit du code, on vient de sortir du WHILE
-         * Ça veut dire qu'on a terminé le mouvement. On va bientôt terminer la coroutine,
-         * mais avant ...
-         *
-         * Il faut encore indiquer à tout le monde que le déplacement est terminé
+         * Ça veut dire qu'on a terminé le mouvement. On va bientôt terminer la coroutine
          */
-
-        isMoving = false;
+        
+        // en fait vu qu'on doit ouvrir qu'une seule fois, c'est pas nécessaire de le remettre à false
+        //isMoving = false;
     }
 }
 
