@@ -20,6 +20,6 @@ public class rotation_centre_gravite : MonoBehaviour
     void Update()
     {
         this.transform.Rotate(new Vector3(Random.value, Random.value, Random.value));
-        this.transform.RotateAround(Vector3.zero, Vector3.up, 4.0f);
+        this.transform.RotateAround(Vector3.zero, Vector3.up, 1.5f);
     }
 }
