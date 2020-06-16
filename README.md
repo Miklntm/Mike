@@ -9,5 +9,8 @@ Vous trouverez un lien vous permettant de visionner deux vidéos du projet.
 [Lien du drive](https://drive.google.com/drive/u/0/folders/1WfmVm9jBlVlvWVBaINOttLzNrrx4zov_)
 
 
+Je mets aussi à votre disposition les builds de mon projet, sous mac et windows, bien qu'inutilisable si vous ne possédez pas de capteur chez vous. 
+
+
 
 
